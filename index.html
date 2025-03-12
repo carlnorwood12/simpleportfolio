@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backdrop Filter Blur on Text</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    #svgWrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url(https://images4.alphacoders.com/104/1047970.jpg) center / cover no-repeat;
+      filter: hue-rotate(0deg);
+      width: 100%;
+      height: 100%;
+      animation: colorchange 10s ease infinite;
+      z-index: 9999999999999999999 !important;
+    }
+    #svgWrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: -1;
+
+      pointer-events: none;
+    }
+    iframe
+    {
+      border: none;
+      position: absolute;
+      filter: sepia(1);
+      filter: hue-rotate(50deg);
+      opacity: 0.5;
+    }
+    #svg {
+      width: 100%;
+      height: 100%;
+      mask-image: url(./svgs/h1.svg);
+      mask-size: contain;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px) saturate(500%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <section id="svgWrapper">
+    <iframe src="https://unicorn.studio/embed/7y28J1kgLcxsLQHBbCCS" width="100%" height="100%" loading="lazy"></iframe>
+    <div id="svg"></div>
+  </section>
+</body>
+</html>
