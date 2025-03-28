@@ -1,68 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Backdrop Filter Blur on Text</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    #svgWrapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: url(https://images4.alphacoders.com/104/1047970.jpg) center / cover no-repeat;
-      filter: hue-rotate(0deg);
-      width: 100%;
-      height: 100%;
-      animation: colorchange 10s ease infinite;
-      z-index: 9999999999999999999 !important;
-    }
-    #svgWrapper::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: -1;
-
-      pointer-events: none;
-    }
-    iframe
-    {
-      border: none;
-      position: absolute;
-      filter: sepia(1);
-      filter: hue-rotate(50deg);
-      opacity: 0.5;
-    }
-    #svg {
-      width: 100%;
-      height: 100%;
-      mask-image: url(./svgs/h1.svg);
-      mask-size: contain;
-      mask-position: center;
-      mask-repeat: no-repeat;
-      background-color: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(15px) saturate(500%);
-      pointer-events: none;
-    }
-  </style>
-</head>
-<body>
-  <section id="svgWrapper">
-    <iframe src="https://unicorn.studio/embed/7y28J1kgLcxsLQHBbCCS" width="100%" height="100%" loading="lazy"></iframe>
-    <div id="svg"></div>
-  </section>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😎</text></svg>">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Sup I have over 17 years of experience in web development in Edinburgh | Specializing in creative solutions for any project. Currently studying at Edinburgh College, let’s collaborate on a website." />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <a href="mailto:cnorwoodk@gmail.com" target="_blank" rel="noopener noreferrer">
+        <div class="icon">
+          <p>Email</p>
+          <img src="mail.svg" alt="Mail" aria-label="Mail" />
+        </div>
+      </a>
+      <a href="https://www.instagram.com/carlnorwoodk/" target="_blank" rel="noopener noreferrer">
+        <div class="icon">
+          <p>Instagram</p>
+          <img src="instagram.svg" alt="Instagram" aria-label="Instagram" />
+        </div>
+      </a>
+      <a href="https://github.com/carlnorwood12" target="_blank" rel="noopener noreferrer">
+        <div class="icon">
+          <p>Github</p>
+          <img src="github.svg" alt="Github" aria-label="Github" />
+        </div>
+      </a>
+      <a href="solacc.pdf" download>
+        <div class="icon">
+          <p>Qualifications</p>
+          <img src="certificate.svg" alt="Qualifications" aria-label="Qualifications" />
+        </div>
+      </a>
+    </section>
+    <section>
+      <div class="left">
+        <div id="wrapper">
+          <div class="carl-image"></div>
+        </div>
+      </div>
+      <div class="right">
+        <img id="grid" src="grid.svg" alt="" aria-label="" />
+        <img src="carlnorwood.svg" alt="" aria-label="" />
+        <p>Waddam! I'm a web developer currently studying at <b>Edinburgh College</b>.
+          I created this for fun, and shouldn't be taken too seriously. I'm passionate
+          about creating creative solutions to any problem i encounter. 😎</p>
+      </div>
+    </section>
+    <section>
+      <div class="marquee-container">
+        <div class="content-wrapper-scrolling">
+          <p class="p-marquee">Web Developer</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+          <p class="p-marquee">Located in Edinburgh</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+          <p class="p-marquee">5+ Years Experience</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+        </div>
+        <div class="content-wrapper-scrolling">
+          <p class="p-marquee">Web Developer</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+          <p class="p-marquee">Located in Edinburgh</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+          <p class="p-marquee">5+ Years Experience</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+        </div>
+        <div class="content-wrapper-scrolling">
+          <p class="p-marquee">Web Developer</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+          <p class="p-marquee">Located in Edinburgh</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+          <p class="p-marquee">5+ Years Experience</p>
+          <img class="twinkle" src="asterisk.svg" alt="" aria-label="" />
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
